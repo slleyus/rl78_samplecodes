@@ -1,0 +1,5 @@
+com.renesas.cdt.ccrl.common.option.cpu=s3
+com.renesas.cdt.ccrl.common.option.device=R5F104PJ
+com.renesas.cdt.ccrl.common.option.family=RL78 - G14
+com.renesas.cdt.ccrl.compiler.option.I="${TCINSTALL}\\inc";
+eclipse.preferences.version=1

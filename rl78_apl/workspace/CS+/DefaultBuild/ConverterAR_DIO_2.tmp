@@ -1,0 +1,5 @@
+-form=stype
+-output="AR_DIO_2.mot"
+-byte_count=10
+-nomessage
+-nologo

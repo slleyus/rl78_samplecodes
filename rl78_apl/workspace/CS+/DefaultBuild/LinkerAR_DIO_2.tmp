@@ -1,0 +1,29 @@
+-device="C:\Renesas\e2_studio\DebugComp\\RL78\RL78\Common\DR5F104ML.DVF"
+-list="AR_DIO_2.map"
+-show=symbol,vector,struct
+-nooptimize
+-auto_section_layout
+-security_id=00000000000000000000
+-debug_monitor=7FF00-7FFFF
+-user_opt_byte=EE7FE8
+-ocdbg=84
+-ocdtr
+-input=".\cstart.obj"
+-input=".\stkinit.obj"
+-input=".\r_main.obj"
+-input=".\r_systeminit.obj"
+-input=".\r_cg_cgc.obj"
+-input=".\r_cg_timer.obj"
+-input=".\sketch\AR_SKETCH.obj"
+-input=".\AR_LIB\AR_LIB_PORT.obj"
+-input=".\AR_LIB\AR_LIB_TIME.obj"
+-library="C:\Program Files (x86)\Renesas\RL78\1_9_0\lib\rl78em4s99.lib"
+-library="C:\Program Files (x86)\Renesas\RL78\1_9_0\lib\rl78em4r.lib"
+-library="C:\Program Files (x86)\Renesas\RL78\1_9_0\lib\malloc_n.lib"
+-output="AR_DIO_2.abs"
+-debug
+-nocompress
+-memory=high
+-rom=.data=.dataR,.sdata=.sdataR
+-nomessage
+-nologo

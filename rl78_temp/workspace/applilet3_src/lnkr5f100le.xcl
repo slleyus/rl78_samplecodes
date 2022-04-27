@@ -1,0 +1,230 @@
+//-------------------------------------------------------------------------
+//      XLINK command file template for RL78 microcontroller R5F100LE.
+//
+//      This filecan be used to link object files from the RL78
+//      Assembler, ARL78, and the C/C++ compiler ICCRL78.
+//
+//          This file is generated from the device file:
+//          DR5F100LE.DVF
+//          Copyright(C) 2010 Renesas
+//          Format version V3.00, File version E1.00a
+//-------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
+//      The following segments are defined in this template link file:
+//
+//      INTVEC      -- Interrupt vectors.
+//      CLTVEC      -- Calltable vectors.
+//      RCODE       -- Code used by C/C++ startup and run-time library.
+//      CODE        -- Code used by __near_func, __interrupt and __callt functions.
+//      XCODE       -- Code used by __far_func functions.
+//      NEAR_CONST_ -- Constants used by __near const.
+//      FAR_CONST   -- Constants used by __far const.
+//      SADDR_x     -- Variables used by __saddr.
+//      NEAR_x      -- Variables used by __near.
+//      FAR_x       -- Variables used by __far.
+//      NEAR_HEAP   -- The heap used by near data model.
+//      FAR_HEAP    -- The heap used by far data model.
+//      SWITCH      -- Switch tables used by near code model.
+//      FSWITCH     -- Switch tables used by near far model.
+//      DIFUNCT     -- Dynamic initialization vector used by C++
+//
+//      Where _x could be one of:
+//
+//      _Z      -- Initialized data (initvalue = 0 or without init value).
+//      _I      -- Initialized data (initvalue != 0).
+//      _ID     -- The initial values of _I.
+//      _N      -- Uninitialized data, used by __no_init.
+//-------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
+//      Define CPU
+//-------------------------------------------------------------------------
+
+-cRL78
+
+//-------------------------------------------------------------------------
+//      Size of the stack.
+//      Remove comment and modify number if used from command line.
+//-------------------------------------------------------------------------
+
+//-D_CSTACK_SIZE=80
+
+//-------------------------------------------------------------------------
+//      Near constant location.
+//      0 -> Mirrored in rom area 0x00000 - 0x0FFFF
+//      1 -> Mirrored in rom area 0x10000 - 0x1FFFF
+//      2 -> Writeable constants
+//      Remove comments and modify number if used from command line.
+//-------------------------------------------------------------------------
+
+//-D_NEAR_CONST_LOCATION=0
+//-D_NEAR_CONST_LOCATION_START=02000
+//-D_NEAR_CONST_LOCATION_END=0EEFF
+
+//-------------------------------------------------------------------------
+//      Size of the heaps.
+//      Remove comment and modify number if used from command line.
+//-------------------------------------------------------------------------
+
+//-D_NEAR_HEAP_SIZE=400
+//-D_FAR_HEAP_SIZE=4000
+
+//-------------------------------------------------------------------------
+//      Define the format functions used by printf/scanf.
+//      Default is full formatting.
+//      Remove appropriate comment(s) to get reduced formatting
+//      if used from command line.
+//-------------------------------------------------------------------------
+
+//-e_PrintfTiny=_Printf
+//-e_PrintfSmall=_Printf
+//-e_PrintfLarge=_Printf
+
+//-e_ScanfSmall=_Scanf
+//-e_ScanfLarge=_Scanf
+
+//-------------------------------------------------------------------------
+//      Define if row buffering should be used by terminal output.
+//      Default is no buffering.
+//      Remove comment to get buffered terminal output if used from command line.
+//-------------------------------------------------------------------------
+
+//-e__write_buffered=__write
+
+//-------------------------------------------------------------------------
+//      Allocate the read only segments that are mapped to ROM.
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+//      Interrupt vector segment.
+//-------------------------------------------------------------------------
+-Z(CODE)INTVEC=00000-0007F
+
+//-------------------------------------------------------------------------
+//      CALLT vector segment.
+//-------------------------------------------------------------------------
+-Z(CODE)CLTVEC=00080-000BF  //000BD
+
+//-------------------------------------------------------------------------
+//      OPTION BYTES segment.
+//-------------------------------------------------------------------------
+-Z(CODE)OPTBYTE=000C0-000C3
+
+//-------------------------------------------------------------------------
+//      SECURITY_ID segment.
+//-------------------------------------------------------------------------
+-Z(CODE)SECUID=000C4-000CD
+
+//-------------------------------------------------------------------------
+//      Reserved ROM areas for Minicube Firmware: 000CE-000D7
+//                                                0FC00-0FFFF
+//-------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
+//      Far data segments.
+//-------------------------------------------------------------------------
+//-Z(CONST)FAR_ID#0FBFF
+//-Z(DATA)FAR_I=FEF00-FFE1F
+
+-Z(FARCONST)FAR_ID=02FFF-FFFF
+-Z(FARDATA)FAR_I=FF700-FFEDF
+
+
+// FAL
+// ============
+-Z(CODE)FAL_CODE=[01000-01FFE]/10000
+-Z(CONST)FAL_CNST=[01000-01FFE]/10000
+
+//-------------------------------------------------------------------------
+//      Startup, Runtime-library, Near, Interrupt 
+//      and CALLT functions code segment.
+//-------------------------------------------------------------------------
+//-Z(CODE)RCODE,CODE=000D8-0FBFF
+-Z(CODE)RCODE,CODE=02000-FFFF
+
+//-------------------------------------------------------------------------
+//      Data initializer segments. 
+//-------------------------------------------------------------------------
+//-Z(CONST)NEAR_ID=[000D8-0FBFF]/10000
+//-Z(CONST)SADDR_ID=[000D8-0FBFF]/10000
+//-Z(CONST)DIFUNCT=[000D8-0FBFF]/10000
+-Z(CONST)NEAR_ID=[02000-FFFF]/10000
+-Z(CONST)SADDR_ID=[02000-FFFF]/10000
+-Z(CONST)DIFUNCT=[02000-FFFF]/10000
+
+//-------------------------------------------------------------------------
+//      Constant segments 
+//-------------------------------------------------------------------------
+//-Z(CONST)NEAR_CONST=_NEAR_CONST_LOCATION_START-_NEAR_CONST_LOCATION_END
+//-Z(CONST)SWITCH=000D8-0FBFF
+//-P(CONST)FAR_CONST,FSWITCH=[000D8-0FBFF]/10000
+-Z(CONST)NEAR_CONST=_NEAR_CONST_LOCATION_START-_NEAR_CONST_LOCATION_END
+-P(CONST)FAR_CONST=[02000-FFFF]/10000
+-Z(CONST)SWITCH=02000-FFFF
+-Z(CONST)FSWITCH=[02000-FFFF]/10000
+
+//-------------------------------------------------------------------------
+//      Far functions code segment.
+//-------------------------------------------------------------------------
+//-P(CODE)XCODE=[000D8-0FBFF]/10000
+-Z(CODE)XCODE=[02000-FFFF]/10000
+
+//-------------------------------------------------------------------------
+//      Allocate the read/write segments that are mapped to RAM.
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+//      EEPROM segment.
+//      Note: This segment will not be automatically created
+//            and it will not be initialised by CSTARTUP!
+//-------------------------------------------------------------------------
+-Z(DATA)EEPROM=F1000-F1FFF
+
+//-------------------------------------------------------------------------
+//      Short address data and workseg segments.
+//-------------------------------------------------------------------------
+-Z(DATA)WRKSEG=FFE20-FFEDF
+-Z(DATA)SADDR_I,SADDR_Z,SADDR_N,FAL_DATA=FFE20-FFEDF
+
+//-------------------------------------------------------------------------
+//      Near data segments.
+//-------------------------------------------------------------------------
+//-Z(DATA)NEAR_I,NEAR_Z,NEAR_N=FEF00-FFE1F
+-Z(DATA)NEAR_I,NEAR_Z,NEAR_N=FF700-FFEDF
+
+//-------------------------------------------------------------------------
+//      Far data segments.
+//-------------------------------------------------------------------------
+//-Z(DATA)FAR_Z=[FEF00-FFE1F]/10000
+//-P(DATA)FAR_N=[FEF00-FFE1F]/10000
+-Z(FARDATA)FAR_Z=FF700-FFEDF
+-P(DATA)FAR_N=[FF700-FFEDF]/10000
+
+//-------------------------------------------------------------------------
+//      Heap segments.
+//-------------------------------------------------------------------------
+//-Z(DATA)NEAR_HEAP+_NEAR_HEAP_SIZE=FEF00-FFE1F
+//-Z(DATA)FAR_HEAP+_FAR_HEAP_SIZE=[FEF00-FFE1F]/10000
+-Z(DATA)NEAR_HEAP+_NEAR_HEAP_SIZE=FF700-FFEDF
+-Z(DATA)FAR_HEAP+_FAR_HEAP_SIZE=[FF700-FFEDF]/10000
+
+//-------------------------------------------------------------------------
+//      Stack segment.
+//-------------------------------------------------------------------------
+//-Z(DATA)CSTACK+_CSTACK_SIZE=FEF00-FFE1F
+-Z(DATA)CSTACK+_CSTACK_SIZE=FF700-FFEDF
+
+//-------------------------------------------------------------------------
+//      ****** Added ******    Ram Protection Segment
+//-------------------------------------------------------------------------
+//-Z(DATA)RAM_PROTECT1=FEF00-FEF7F
+-Z(DATA)RAM_PROTECT1=FF080-FF0FF
+
+//-------------------------------------------------------------------------
+//      Select the output file format if used from command line.
+//      Remove comment to select the file format if used from command line.
+//-------------------------------------------------------------------------
+//-Fdebug
+
+//-------------------------------------------------------------------------
+//      End of File
+//-------------------------------------------------------------------------

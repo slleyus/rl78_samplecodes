@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>4</fileVersion>
+    <fileChecksum>1206668406</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\AR_LIB\AR_LIB_TIME.h</file>
+            <file>$PROJ_DIR$\AR_LIB\AR_SKETCH.h</file>
+            <file>$PROJ_DIR$\r_main.c</file>
+            <file>$PROJ_DIR$\r_cg_userdefine.h</file>
+            <file>$PROJ_DIR$\AR_LIB\AR_LIB_PORT.h</file>
+            <file>$PROJ_DIR$\iodefine.h</file>
+            <file>$PROJ_DIR$\r_cg_macrodriver.h</file>
+            <file>$PROJ_DIR$\AR_LIB\AR_LIB_TIME.c</file>
+            <file>$PROJ_DIR$\r_systeminit.c</file>
+            <file>$PROJ_DIR$\r_cg_timer.c</file>
+            <file>$PROJ_DIR$\AR_LIB\AR_LIB_PORT.c</file>
+            <file>$PROJ_DIR$\r_cg_cgc.c</file>
+            <file>$PROJ_DIR$\r_cg_cgc.h</file>
+            <file>$PROJ_DIR$\r_cg_timer.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_systeminit.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_cg_timer.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_main.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\LibReplacement.o</file>
+            <file>$PROJ_DIR$\sketch\AR_SKETCH.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\AR_LIB_PORT.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_main.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\AR_LIB_TIME.xcl</file>
+            <file>$PROJ_DIR$\Debug\Exe\r01an5387_rl78g14fpb_dio2.out</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_cg_timer.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_systeminit.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\AR_LIB_PORT.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\LibReplacement.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\AR_SKETCH.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\r01an5387_rl78g14fpb_dio2.pbd</file>
+            <file>$PROJ_DIR$\..\..\..\test\IAR\sketch\AR_SKETCH.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_cg_cgc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\AR_LIB_TIME.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_cg_cgc.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\AR_SKETCH.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_systeminit.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\AR_LIB_PORT.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_cg_cgc.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_cg_timer.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_main.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\lib\dlrlnnf23n.a</file>
+            <file>$TOOLKIT_DIR$\config\lnkr5f104ml.icf</file>
+            <file>$PROJ_DIR$\Debug\List\r01an5387_rl78g14fpb_dio2.map</file>
+            <file>$TOOLKIT_DIR$\lib\dbgrlnnf23nd.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\AR_SKETCH.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\AR_LIB_TIME.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\r_main.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 38</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 20</file>
+                </tool>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 16</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 6 5 45 12 13 4 0 1 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\AR_LIB\AR_LIB_TIME.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 44</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 21</file>
+                </tool>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 31</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 6 5 45 0 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\r_systeminit.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 34</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 14</file>
+                </tool>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 24</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 6 5 45 12 13 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\r_cg_timer.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 37</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 23</file>
+                </tool>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 15</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 6 5 45 13 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\AR_LIB\AR_LIB_PORT.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 35</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 25</file>
+                </tool>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 19</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 6 5 45 13 3 4</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\r_cg_cgc.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 36</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32</file>
+                </tool>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 30</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 6 5 45 12 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>INTERNAL_HWSUPPORT</name>
+                    <file> 26</file>
+                </tool>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 22 41</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\sketch\AR_SKETCH.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 43</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33</file>
+                </tool>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 27</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 6 5 45 4 0 1 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\r01an5387_rl78g14fpb_dio2.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 41</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 40 19 31 27 17 30 15 16 24 42 39</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Obj\LibReplacement.s</name>
+            <outputs>
+                <tool>
+                    <name>ARL78</name>
+                    <file> 17</file>
+                </tool>
+            </outputs>
+        </file>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

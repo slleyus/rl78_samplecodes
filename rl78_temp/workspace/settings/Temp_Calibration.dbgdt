@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>964</ColumnWidth1></Debug-Log>
+      <Build>
+        
+        
+        
+        
+      <PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Debug-Log</Factory></Window></Windows></PreferedWindows><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>723</ColumnWidth1><ColumnWidth2>192</ColumnWidth2><ColumnWidth3>48</ColumnWidth3></Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>183</Column0><Column1>27</Column1><Column2>27</Column2><Column3>0</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        
+        
+        
+      <PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><MixedMode>1</MixedMode><CodeCovShow>1</CodeCovShow><InstrProfShow>1</InstrProfShow></Disassembly>
+    <Watch><Format><struct_types/><watch_formats><Fmt><Key>{W}Watch-0:g_DataFlashReadIndex</Key><Value>4</Value></Fmt><Fmt><Key>{W}Watch-0:g_adc_result</Key><Value>4</Value></Fmt><Fmt><Key>{W}Watch-0:g_temp_cal_data</Key><Value>4</Value></Fmt><Fmt><Key>{W}Watch-0:tmp1</Key><Value>4</Value></Fmt><Fmt><Key>{W}Watch-1:g_cal_temp_avg</Key><Value>3</Value></Fmt><Fmt><Key>{W}Watch-2:g_adc_result1</Key><Value>3</Value></Fmt></watch_formats></Format><PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><Column0>166</Column0><Column1>247</Column1><Column2>100</Column2><Column3>100</Column3></Watch><StaticWatch><PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Watch</Factory></Window></Windows></PreferedWindows><Column0>174</Column0><Column1>100</Column1><Column2>100</Column2><Column3>100</Column3></StaticWatch><Memory><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><FindDirection>1</FindDirection><FindAsHex>0</FindAsHex></Memory><Driver-Trace><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><Column0>80</Column0><Column1>80</Column1><Column2>300</Column2></Driver-Trace><Function-Trace><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><Column0>80</Column0><Column1>80</Column1><Column2>300</Column2></Function-Trace><DRIVER_TIMELINE_GRAPH><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows></DRIVER_TIMELINE_GRAPH><Locals><Column0>100</Column0><Column1>127</Column1><Column2>202</Column2><Column3>100</Column3></Locals></Static>
+    <Windows>
+      
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-28931-24032</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>Temp_Calibration</ExpandedNode><ExpandedNode>Temp_Calibration/applilet_src</ExpandedNode><ExpandedNode>Temp_Calibration/user_src</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-955-4641</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab><Tab><Identity>TabID-596-16333</Identity><TabName>Watch</TabName><Factory>Watch</Factory><Session><Expressions><Expression><Expression>g_adc_temperature</Expression></Expression><Expression><Expression>g_adc_int_ref</Expression></Expression><Expression><Expression>g_measured_temp_avg</Expression></Expression><Expression><Expression>g_measured_tempi</Expression></Expression><Expression><Expression>g_measured_tempf</Expression></Expression></Expressions><TabId>0</TabId><Column0>166</Column0><Column1>247</Column1><Column2>100</Column2><Column3>100</Column3></Session></Tab><Tab><Identity>TabID-27434-5969</Identity><TabName>Live Watch</TabName><Factory>StaticWatch</Factory><Session><Expressions><Expression><Expression>g_measured_temp_avg</Expression></Expression><Expression><Expression>g_measured_tempi</Expression></Expression><Expression><Expression>g_adc_temperature</Expression></Expression><Expression><Expression>g_adc_int_ref</Expression></Expression></Expressions><TabId>2</TabId><Column0>174</Column0><Column1>100</Column1><Column2>100</Column2><Column3>100</Column3></Session></Tab><Tab><Identity>TabID-32663-10988</Identity><TabName>Locals</TabName><Factory>Locals</Factory><Session><Column0>100</Column0><Column1>127</Column1><Column2>202</Column2><Column3>100</Column3></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane/><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-0025a268><key>iaridepm.enu1</key></Toolbar-0025a268></Sizes></Row0><Row1><Sizes><Toolbar-002e7d28><key>debuggergui.enu1</key></Toolbar-002e7d28></Sizes></Row1><Row2><Sizes><Toolbar-002e7b98><key>rl78ocd.enu1</key></Toolbar-002e7b98></Sizes></Row2><Row3><Sizes/></Row3><Row4><Sizes/></Row4><Row5><Sizes/></Row5><Row6><Sizes/></Row6><Row7><Sizes/></Row7></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>433</Bottom><Right>257</Right><x>-2</x><y>-2</y><xscreen>185</xscreen><yscreen>146</yscreen><sizeHorzCX>180664</sizeHorzCX><sizeHorzCY>209770</sizeHorzCY><sizeVertCX>252930</sizeVertCX><sizeVertCY>625000</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>169</Bottom><Right>1026</Right><x>-2</x><y>-2</y><xscreen>1028</xscreen><yscreen>171</yscreen><sizeHorzCX>1003906</sizeHorzCX><sizeHorzCY>245690</sizeHorzCY><sizeVertCX>187500</sizeVertCX><sizeVertCY>245690</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

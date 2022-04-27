@@ -1,0 +1,37 @@
+-Input=DefaultBuild\cstart.obj
+-Input=DefaultBuild\stkinit.obj
+-Input=DefaultBuild\r_main.obj
+-Input=DefaultBuild\r_systeminit.obj
+-Input=DefaultBuild\r_cg_cgc.obj
+-Input=DefaultBuild\r_cg_timer.obj
+-Input=DefaultBuild\AR_SKETCH.obj
+-Input=DefaultBuild\AR_LIB_PORT.obj
+-Input=DefaultBuild\AR_LIB_TIME.obj
+-SECURITY_ID=00000000000000000000
+-DEVICE=C:\Program Files (x86)\Renesas Electronics\CS+\CC\Device\RL78\Devicefile\DR5F104ML.DVF
+-DEBug
+-NOCOmpress
+-NOOPtimize
+-OUtput=DefaultBuild\r01an5387_rl78g14fpb_dio2.abs
+-LIBrary=C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RL\V1.09.00\lib\rl78em4s99.lib
+-LIBrary=C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RL\V1.09.00\lib\malloc_n.lib
+-LIBrary=C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RL\V1.09.00\lib\rl78em4r.lib
+-OCDBG=84
+-DEBUG_MONITOR=7FF00-7FFFF
+-USER_OPT_BYTE=EE7FE8
+-OCDTR
+-LISt=DefaultBuild\r01an5387_rl78g14fpb_dio2.map
+-SHow=SYmbol,VECTOR,STRUCT
+-AUTO_SECTION_LAYOUT
+-ROm=.data=.dataR
+-ROm=.sdata=.sdataR
+-NOMessage
+-NOLOgo
+-end
+-Input=DefaultBuild\r01an5387_rl78g14fpb_dio2.abs
+-DEVICE=C:\Program Files (x86)\Renesas Electronics\CS+\CC\Device\RL78\Devicefile\DR5F104ML.DVF
+-OUtput=DefaultBuild\r01an5387_rl78g14fpb_dio2.mot
+-FOrm=Stype
+-NOMessage
+-exit
+

@@ -1,0 +1,1 @@
+This application and all source code is provided by Renesas under the General Public license (GPL). All users have the rights to obtain, modify and redistribute the full source code of this application.

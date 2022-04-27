@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>Temp_Calibration/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>142</Column0><Column1>5</Column1><Column2>27</Column2><Column3>0</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>723</ColumnWidth1><ColumnWidth2>192</ColumnWidth2><ColumnWidth3>48</ColumnWidth3></Build>
+    <TerminalIO/><Debug-Log><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>964</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-16634-15665</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>Temp_Calibration</ExpandedNode><ExpandedNode>Temp_Calibration/applilet_src</ExpandedNode><ExpandedNode>Temp_Calibration/applilet_src/r_cg_rtc_user.c</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-30289-15819</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-8315-2089</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\applilet3_src\lcd.c</Filename><XPos>0</XPos><YPos>18</YPos><SelStart>3073</SelStart><SelEnd>3073</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart_5\rl78\inc\intrinsics.h</Filename><XPos>0</XPos><YPos>37</YPos><SelStart>1206</SelStart><SelEnd>1206</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\applilet3_src\r_cg_cgc.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\applilet3_src\r_cg_adc.c</Filename><XPos>0</XPos><YPos>60</YPos><SelStart>4183</SelStart><SelEnd>4183</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\applilet3_src\r_systeminit.c</Filename><XPos>0</XPos><YPos>75</YPos><SelStart>4072</SelStart><SelEnd>4072</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\applilet3_src\r_cg_adc.h</Filename><XPos>0</XPos><YPos>81</YPos><SelStart>5239</SelStart><SelEnd>5264</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\applilet3_src\r_cg_rtc.c</Filename><XPos>0</XPos><YPos>75</YPos><SelStart>4248</SelStart><SelEnd>4248</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\applilet3_src\r_cg_rtc_user.c</Filename><XPos>0</XPos><YPos>33</YPos><SelStart>2586</SelStart><SelEnd>2586</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\applilet3_src\r_main.c</Filename><XPos>0</XPos><YPos>84</YPos><SelStart>4466</SelStart><SelEnd>4466</SelEnd></Tab><ActiveTab>8</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\applilet3_src\r_cg_rtc.h</Filename><XPos>0</XPos><YPos>135</YPos><SelStart>7725</SelStart><SelEnd>7725</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-0025a0e0><key>iaridepm.enu1</key></Toolbar-0025a0e0></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>418</Bottom><Right>212</Right><x>-2</x><y>-2</y><xscreen>208</xscreen><yscreen>234</yscreen><sizeHorzCX>203125</sizeHorzCX><sizeHorzCY>336207</sizeHorzCY><sizeVertCX>208984</sizeVertCX><sizeVertCY>603448</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>232</Bottom><Right>1026</Right><x>-2</x><y>-2</y><xscreen>1028</xscreen><yscreen>234</yscreen><sizeHorzCX>1003906</sizeHorzCX><sizeHorzCY>336207</sizeHorzCY><sizeVertCX>203125</sizeVertCX><sizeVertCY>336207</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

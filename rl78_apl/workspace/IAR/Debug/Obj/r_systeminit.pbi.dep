@@ -1,0 +1,8 @@
+r_systeminit.pbi: \
+  F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\r_systeminit.c \
+  F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR/r_cg_macrodriver.h \
+  F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR/iodefine.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4_2\rl78\inc\intrinsics.h \
+  F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR/r_cg_cgc.h \
+  F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR/r_cg_timer.h \
+  F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR/r_cg_userdefine.h

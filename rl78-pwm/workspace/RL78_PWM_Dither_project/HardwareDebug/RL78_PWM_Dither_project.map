@@ -1,0 +1,94 @@
+Renesas Optimizing Linker (W2.07.00 )             16-Aug-2017 19:27:55
+
+*** Options ***
+
+-subcommand=LinkerSubCommand.tmp
+-input="./src/cstart.obj"
+-input="./src/stkinit.obj"
+-input="./src/pwm_dithering.obj"
+-input="./src/pwmout_to_input_adc.obj"
+-input="./src/r_cg_adc.obj"
+-input="./src/r_cg_adc_user.obj"
+-input="./src/r_cg_cgc.obj"
+-input="./src/r_cg_cgc_user.obj"
+-input="./src/r_cg_dtc.obj"
+-input="./src/r_cg_dtc_user.obj"
+-input="./src/r_cg_it.obj"
+-input="./src/r_cg_it_user.obj"
+-input="./src/r_cg_port.obj"
+-input="./src/r_cg_port_user.obj"
+-input="./src/r_cg_serial.obj"
+-input="./src/r_cg_serial_user.obj"
+-input="./src/r_cg_timer.obj"
+-input="./src/r_cg_timer_user.obj"
+-input="./src/r_main.obj"
+-input="./src/r_systeminit.obj"
+-input="./src/utility.obj"
+-library=C:\PROGRA~2\Renesas\RL78\1_5_0\lib\rl78em4s.lib
+-library=C:\PROGRA~2\Renesas\RL78\1_5_0\lib\malloc_n.lib
+-library=C:\PROGRA~2\Renesas\RL78\1_5_0\lib\rl78em4r.lib
+-list=RL78_PWM_Dither_project.map
+-nooptimize
+-entry=_start
+-auto_section_layout
+-security_id=0
+-ocdbg=84
+-debug_monitor
+-user_opt_byte=ef7ff8
+-output=RL78_PWM_Dither_project.abs
+-debug
+-nocompress
+-memory=high
+-vectn=2=ffff
+-rom=.data=.dataR,.sdata=.sdataR
+-nomessage
+-device=C:/Renesas/e2_studio_5_4_0_015/DebugComp/RL78\Common\DR5F104PJ.DVF
+-nologo
+
+*** Error information ***
+
+W0561184:Interrupt number "0x2" of ".vect" is defined
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+.vect
+                                  00000000  0000007f        80   0
+.constf
+                                  00000080  00000080         0   2
+.sdata
+                                  00000080  00000080         0   2
+.data
+                                  00000082  00000085         4   2
+.option_byte
+                                  000000c0  000000c3         4   1
+.security_id
+                                  000000c4  000000cd         a   1
+.SLIB
+                                  000000c4  000000c4         0   1
+.monitor1
+                                  000000ce  000000d7         a   1
+.text
+                                  000000d8  00000288       1b1   1
+.textf
+                                  00000289  00000dec       b64   1
+.RLIB
+                                  00000ded  00000dfd        11   1
+.const
+                                  00003000  00003215       216   2
+.monitor2
+                                  0003fe00  0003ffff       200   1
+.bss
+                                  000f9f00  000f9f7e        7f   2
+.dataR
+                                  000f9f80  000f9f83         4   2
+.bss_ATFE000
+                                  000fe000  000fe01f        20   1
+.bss_ATFFD00
+                                  000ffd00  000ffd27        28   1
+.bss_ATFFD40
+                                  000ffd40  000ffd47         8   1
+.sbss
+                                  000ffe20  000ffe20         0   2
+.sdataR
+                                  000ffe20  000ffe20         0   2

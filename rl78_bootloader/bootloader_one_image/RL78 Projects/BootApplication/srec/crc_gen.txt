@@ -1,0 +1,45 @@
+# srec_cat command file to dump the CRC for a code area
+# Usage: srec_cat @filename
+#        - Run this file first to generate the CRC Image
+
+
+#----------------------------------------------------------------------
+# Get first 0x1000 from application
+#----------------------------------------------------------------------
+..\HardwareDebug\BootApplication.mot                    				# input file - change to point to your application file location
+-fill 0xFF 0x0 0x1000 0x2000 0x7FDFE                                    # fill unused data with 0xFF
+-crop 0x0 0x1000 0x2000 0x7FDFE                                         # crop down to our required space   
+
+#----------------------------------------------------------------------
+# Calculate CRC for Application and place it at 0x7FDFE
+#----------------------------------------------------------------------
+-CRC16_Big_Endian 0x7FDFE -Least_To_Most -XMODEM                        # general CRC
+
+-crop 0x7FDFE 0x7FE00                                                   # isolate CRC
+-byte-swap 2                                                            # byte swap our crc in memory to match memory data orientation
+
+#----------------------------------------------------------------------
+# Produce the output file
+#----------------------------------------------------------------------
+-Output                                                                 # invoke output generation
+..\HardwareDebug\crc.mot                                                                 # file to output to
+#-hex-dump                                                              # allows hex output for readability, remove pound to view
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

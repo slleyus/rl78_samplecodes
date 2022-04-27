@@ -1,0 +1,152 @@
+***********************************************************************************************************
+DESCRIPTION: Renesas Starter Kit Project Readme File	
+***********************************************************************************************************
+
+/**********************************************************************************************************
+* History  : 21.05.2012 Ver. 1.00 First Release
+**********************************************************************************************************/
+
+This project can be debugged with e2studio and an E1.
+
+The Quick Start Guide supplied with the RSK can be referred to for help in
+connecting to the target. 
+
+Support:
+        Online technical support and information is available at: 
+        www.renesas.com/renesas_starter_kits
+
+Technical Contact Details:-
+        America: techsupport.america@renesas.com 
+        Europe : software_support-eu@lm.renesas.com 
+        Japan  : csc@renesas.com 
+
+/* RSKRL78G14 - Board Connector Cross-Reference	*/
+Device = R5F104PJ
+
+***********************************************************************************************************	
+PORT            PIN NAME/               RING                      COMMON                        BUS	
+NUMBER          FUNCTION                BUS PIN                   PIN                           Hardware
+***********************************************************************************************************		
+---             VDD                     J1-22                     ---                           ---
+					
+---             VSS                     J1-13, J1-14              JA1-2, JA2-4                  ---
+                                                                  JA6-24                        ---							
+
+---             EVDD0                   J1-23, J3-3               ---                           ---							
+---             EVDD1                   J1-23, J3-3               ---                           ---
+
+---             EVSS0                   J1-13, J1-14              JA1-2, JA2-4                  ---
+                                                                  JA6-24                        ---
+---             EVSS1                   J1-13, J1-14              JA1-2, JA2-4                  ---
+                                                                  JA6-24                        ---
+
+---             RESET                   J1-13                     JA2-1                         ---							
+---             REGC                    ---                       ---                           ---
+
+P00             TI00_TRGCLKA            J4-22                     JA2-25                        ---	
+P01             TO00_TRGCLKB            J4-21                     JA2-26                        ---
+P02             TxD1                    J4-20                     JA2-6                         RS232	
+P03             RxD1                    J4-19                     JA2-8                         RS232
+P04             SCK10n                  J4-18                     JA2-10                        RS232
+P05             DLCDE                   J2-17                     ---                           LCD
+P06             DLCDRS                  J2-16                     ---                           LCD
+
+P10             TRDIOD1                 J3-19                     JA2-18                        ---	
+P11             TRDIOC1                 J3-18                     JA2-16                        ---
+P12             TRDIOB1                 J3-17                     JA2-17                        ---
+P13             TRDIOA1                 J3-16                     JA2-15                        ---
+P14             TRDIOD0                 J3-15                     JA2-14                        ---
+P15             TRDIOB0                 J3-14                     JA2-13                        ---
+P16             TRDIOC0                 J3-13                     JA6-13                        ---
+P17             TRDIOA0                 J3-12                     JA2-11                        ---
+
+P20             AVREFP                  J4-14                     JA1-7                         ---	
+P21             AVREFM                  J4-15                     JA1-6                         ---
+P22             ANO0                    J4-13                     JA1-13                        ---
+P23             ANO1                    J4-12                     JA1-14                        ---
+P24             ANI4                    J4-11                     JA1-9                         ---
+P25             ANI5                    J4-10                     JA1-10                        ---
+P26             ANI6                    J4-9                      JA1-11                        ---
+P27             ANI7                    J4-8                      JA1-12                        ---
+
+P30             SCK00n                  J3-2                      JA6-10                        ---	
+P31             INTP4                   J2-3                      ---                           ---
+
+P40             TOOL0                   J1-12                     ---                           ---	
+P41             PIN11                   J1-11                     ---                           ---
+P42             PIN10                   J1-10                     ---                           ---
+P43             LED0                    J1-9                      ---                           User LED
+P44             LED1                    J1-8                      ---                           User LED
+P45             PIN7                    J1-7                      ---                           ---
+P46             INTP1                   J1-6                      JA2-7                         ---
+P47             INTP2                   J1-5                      JA2-9                         ---
+
+P50             LINRXD_RxD0_TRGIOA      J3-4                      JA6-7                         --- 	
+P51             LINTXD_TxD0             J3-5                      JA6-8                         ---
+P52             LINNSLP                 J3-6                      ---                           ---
+P53             PIN57                   J3-7                      ---                           ---
+P54             DLCDD4                  J3-8                      ---                           LCD
+P55             DLCDD5                  J3-9                      ---                           LCD
+P56             DLCDD6                  J3-10                     ---                           LCD
+P57             DLCDD7                  J3-11                     ---                           LCD
+
+P60             SCLA0                   ---                       JA1-26                        IIC	
+P61             SDAA0                   ---                       JA1-25                        IIC
+P62             LED2                    J2-1                      ---                           LED2
+P63             LED3                    J2-2                      ---                           LED3
+P64             TO10                    J2-4                      JA2-20                        ---
+P65             TI11                    J2-5                      JA2-22                        ---
+P66             PIN31                   J2-6                      ---                           ---
+P67             PIN32                   J2-7                      ---                           ---
+
+P70             PIN40                   J2-15                     ---                           ---	
+P71             PIN39                   J2-14                     ---                           ---
+P72             PIN38                   J2-13                     ---                           ---
+P73             PIN37                   J2-12                     ---                           ---
+P74             SW1_INTP8               J2-11                     ---                           User Switch
+P75             SW2_INTP9               J2-10                     JA5-9                         User Switch
+P76             SW3_INTP10              J2-9                      JA5-10                        User Switch
+P77             PIN33                   J2-8                      ---                           ---
+
+P80             IO0                     J2-19                     JA1-15                        ---	
+P81             IO1                     J2-20                     JA1-16                        ---
+P82             IO2                     J2-21                     JA1-17                        ---
+P83             IO3                     J2-22                     JA1-18                        ---
+P84             IO4                     J2-23                     JA1-19                        ---
+P85             IO5                     J2-24                     JA1-20                        ---
+P86             IO6                     J2-25                     JA1-21                        ---
+P87             IO7                     J3-1                      JA1-21                        ---
+
+P100            PIN75                   J3-25                     ---                           ---	
+P101            PIN70                   J3-20                     ---                           ---
+P102            PIN92                   J4-17                     ---                           ---
+
+P110            PIN71                   J3-21                     ---                           ---	
+P111            PIN72                   J3-22                     ---                           ---
+
+P120            PIN4                    J1-4                      ---                           ---	
+P121            CON_X1                  J1-18                     ---                           System Clock 
+P122            CON_X2                  J1-17                     JA2-2                         System Clock
+P123            CON_XT1                 J1-15                     ---                           Subsystem Clock
+P124            CON_XT2                 J1-14                     ---                           Subsystem Clock
+
+P130            PIN91                   J4-16                     ---                           ---	
+P137            INTP0                   J1-16                     JA2-24                        ---
+	
+P140            PIN3                    J1-3                      ---                           ---	
+P141            PIN2                    J1-2                      ---                           ---
+P142            SCK30n                  J1-1                      JA6-11                        ---
+P143            RxD3                    J4-25                     JA6-12                        ---
+P144            TxD3                    J4-24                     JA6-9                         ---
+P145            PIN98                   J4-23                     ---                           ---
+P146            PIN73                   J3-23                     ---                           ---
+P147            PIN74                   J3-24                     J15-3                         ---
+
+P150            ADPOT                   J4-7                      ---                           ---				
+P151            PIN81                   J4-6                      ---                           ---
+P152            PIN80                   J4-5                      ---                           ---
+P153            ANI11                   J4-4                      JA5-1                         ---
+P154            ANI12                   J4-3                      JA5-2                         ---
+P155            ANI13                   J4-2                      JA5-3                         ---
+P156            ANI14                   J4-1                      JA5-4                         ---
+

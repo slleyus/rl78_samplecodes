@@ -1,0 +1,535 @@
+###############################################################################
+#
+# IAR ELF Linker V4.20.1.2260 for RL78                    05/Jun/2020  10:43:21
+# Copyright 2011-2019 IAR Systems AB.
+#
+#    Output file  =
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Exe\r01an5387_rl78g14fpb_dio2.out
+#    Map file     =
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\List\r01an5387_rl78g14fpb_dio2.map
+#    Command line =
+#        -f C:\Users\A73920~1.ZZ0\AppData\Local\Temp\EW1A41.tmp
+#        (F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Obj\AR_LIB_PORT.o
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Obj\AR_LIB_TIME.o
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Obj\AR_SKETCH.o
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Obj\LibReplacement.o
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Obj\r_cg_cgc.o
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Obj\r_cg_timer.o
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Obj\r_main.o
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Obj\r_systeminit.o
+#        --no_out_extension -o
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Exe\r01an5387_rl78g14fpb_dio2.out
+#        --config_def __RESERVE_OCD_ROM=1 --config_def
+#        __RESERVE_OCD_TRACE_RAM=0 --config_def __RESERVE_HOTPLUGIN_RAM=0 --map
+#        F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\List\r01an5387_rl78g14fpb_dio2.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4_2\rl78\config\lnkr5f104ml.icf" --config_def _STACK_SIZE=128
+#        --config_def _NEAR_HEAP_SIZE=256 --config_def _FAR_HEAP_SIZE=4096
+#        --config_def _HUGE_HEAP_SIZE=0 --define_symbol _NEAR_CONST_LOCATION=0
+#        --config_def _NEAR_CONST_LOCATION_START=0x3000 --config_def
+#        _NEAR_CONST_LOCATION_SIZE=0xF00 --redirect ?UC_DIV_L01=HWDIV_8_8_8
+#        --redirect ?UC_MOD_L01=HWMOD_8_8_8 --redirect ?SC_DIV_L01=HWSDIV_8_8_8
+#        --redirect ?SC_MOD_L01=HWSMOD_8_8_8 --redirect
+#        ?SI_DIV_L02=HWSDIV_16_16_16 --redirect ?SI_MOD_L02=HWSMOD_16_16_16
+#        --redirect ?SL_DIV_L03=HWSDIV_32_32_32 --redirect
+#        ?SL_MOD_L03=HWSMOD_32_32_32 --vfe --entry __iar_program_start
+#        --debug_lib --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__SystemLibrary            = DLib
+__calling_convention       = v2
+__code_model               = near
+__core                     = s3
+__data_model               = near
+__dlib_full_locale_support = 0
+__dlib_version             = 6
+__double_size              = 32
+__far_rt_calls             = false
+__near_const               = rom0
+__rt_version               = 2
+
+
+*******************************************************************************
+*** RESERVED RANGES
+***
+
+Ranges reserved by mirroring and reserve directives:
+
+      From        To   Size
+      ----        --   ----
+  0x7'fe00  0x7'ffff  0x200
+  0xf'3000  0xf'3eff  0xf00
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"RESET":
+       place at address 0x0 { ro section .reset };
+"VECTOR":
+       place at address 0x4 { ro section .intvec };
+define block OPT_BYTE
+   with size = 4 { R_OPT_BYTE, ro section .option_byte, ro section OPTBYTE };
+"A2":  place at address 0xc0 { block OPT_BYTE };
+"MIRROR":
+       place in [from 0x3000 to 0x3eff] with mirroring to 0xf'3000 {
+          ro R_CONST_init, ro section .const, ro section .switch };
+"ROMNEAR":
+       place in [from 0xd8 to 0xffff] { R_TEXT, ro section .text };
+define block INIT_ARRAY
+   with fixed order, alignment = 2 {
+      ro section .preinit_array, ro section .init_array };
+define block INIT_ARRAY_TLS
+   with fixed order, alignment = 2 {
+      ro section .preinit_array_tls, ro section .init_array_tls };
+"ROMFAR":
+       place in [from 0xd8 to 0xffff] |
+                [from 0x1'0000 to 0x1'ffff repeat 7] {
+          block INIT_ARRAY, block INIT_ARRAY_TLS, R_TEXTF_UNIT64KP,
+          ro section .textf_unit64kp, ro section .constf, ro section .switchf,
+          ro };
+"ROMHUGE":
+       place in [from 0xd8 to 0x7'ffff] {
+          ro section .consth, R_TEXTF, ro section .textf };
+define block NEAR_HEAP with size = 256, alignment = 2 { };
+define block CSTACK with size = 128, alignment = 2 { rw section CSTACK };
+"RAMNEAR":
+       place in [from 0xf'3f00 to 0xf'fe1f] {
+          block NEAR_HEAP, block CSTACK, zi section .iar.dynexit, R_DATA,
+          rw section .data, R_BSS, rw section .bss*, rw };
+"SADDRMEM":
+       place in [from 0xf'fe20 to 0xf'fedf] {
+          rw section .sdata, R_SDATA, rw section .sbss*, R_SBSS,
+          rw section .wrkseg };
+reserve region "OCD ROM area" = [from 0x7'fe00 to 0x7'ffff];
+initialize by copy with simple ranges {
+   rw, R_DATA, R_BSS, R_DATAF, R_BSSF, R_SDATA, R_SBSS };
+
+No sections matched the following patterns:
+
+  R_BSS                          in "RAMNEAR"
+  R_BSSF                         in "RAMFAR"
+  R_CALLT0                       in "CALLT"
+  R_DATA                         in "RAMNEAR"
+  R_DATAF                        in "RAMFAR"
+  R_OPT_BYTE                     in block OPT_BYTE
+  R_SBSS                         in "SADDRMEM"
+  R_SDATA                        in "SADDRMEM"
+  R_SECUR_ID                     in block SECUR_ID
+  R_TEXT                         in "ROMNEAR"
+  R_TEXTF                        in "ROMHUGE"
+  R_TEXTF_UNIT64KP               in "ROMFAR"
+  ro R_CONST_init                in "MIRROR"
+  ro section .callt0             in "CALLT"
+  ro section .constf             in "ROMFAR"
+  ro section .consth             in "ROMHUGE"
+  ro section .init_array         in block INIT_ARRAY
+  ro section .init_array_tls     in block INIT_ARRAY_TLS
+  ro section .option_byte        in block OPT_BYTE
+  ro section .preinit_array      in block INIT_ARRAY
+  ro section .preinit_array_tls  in block INIT_ARRAY_TLS
+  ro section .security_id        in block SECUR_ID
+  ro section .switch             in "MIRROR"
+  ro section .switchf            in "ROMFAR"
+  ro section .textf_unit64kp     in "ROMFAR"
+  ro section SECUID              in block SECUR_ID
+  rw section .bss_unit64kp       in "RAMFAR"
+  rw section .bssf*              in "RAMFAR"
+  rw section .data_unit64kp      in "RAMFAR"
+  rw section .dataf              in "RAMFAR"
+  rw section .hbss*              in "RAMHUGE"
+  rw section .hdata              in "RAMHUGE"
+  rw section .sbss*              in "SADDRMEM"
+  rw section .sdata              in "SADDRMEM"
+  zi section .iar.dynexit        in "RAMNEAR"
+
+
+  Section            Kind      Address   Size  Object
+  -------            ----      -------   ----  ------
+"RESET":                                  0x2
+  .reset             const         0x0    0x2  interrupt_vector.o [3]
+                                 - 0x2    0x2
+
+"VECTOR":                                0x7c
+  .intvec            const         0x4   0x7c  interrupt_vector.o [3]
+                                - 0x80   0x7c
+
+"A2":                                     0x4
+  OPT_BYTE                        0xc0    0x4  <Block>
+    OPTBYTE          const        0xc0    0x1  r_main.o [1]
+    OPTBYTE          const        0xc1    0x1  r_main.o [1]
+    OPTBYTE          const        0xc2    0x1  r_main.o [1]
+    OPTBYTE          const        0xc3    0x1  r_main.o [1]
+                                - 0xc4    0x4
+
+"MIRROR":                                0x62
+  .const             const      0x3000   0x4c  AR_LIB_PORT.o [1]
+  .const             const      0x304c   0x16  AR_SKETCH.o [1]
+                              - 0x3062   0x62
+
+"ROMNEAR":                              0x5bc
+  .text              ro code    0x3062  0x243  AR_SKETCH.o [1]
+  .text              ro code    0x32a5  0x143  AR_LIB_PORT.o [1]
+  .text              ro code    0x33e8   0x83  AR_LIB_TIME.o [1]
+  .text              ro code    0x346b   0x7a  r_cg_timer.o [1]
+  .text              ro code    0x34e5   0x4f  r_cg_cgc.o [1]
+  .text              ro code    0x3534   0x3a  r_main.o [1]
+  .text              ro code    0x356e   0x3a  cstartup.o [3]
+  .text              ro code    0x35a8   0x22  LibReplacement.o [1]
+  .text              ro code    0x35ca   0x1b  r_systeminit.o [1]
+  .text              ro code    0x35e5   0x13  default_handler.o [3]
+  .text              ro code    0x35f8   0x11  __dbg_xxexit.o [2]
+  .text              ro code    0x3609    0xa  __dbg_abort.o [2]
+  .text              ro code    0x3613    0x5  cexit.o [3]
+  .text              ro code    0x3618    0x3  exit.o [3]
+  .text              ro code    0x361b    0x3  __dbg_break.o [2]
+                              - 0x361e  0x5bc
+
+"ROMFAR":                                0x42
+  Initializer bytes  const      0x361e   0x36  <for RAMNEAR-1>
+  .iar.init_table    const      0x3654    0xc  - Linker created -
+                              - 0x3660   0x42
+
+"ROMHUGE":                               0x9d
+  .textf             ro code    0x3660   0x5c  near_copy_init.o [3]
+  .textf             ro code    0x36bc   0x41  data_init.o [3]
+                              - 0x36fd   0x9d
+
+"RAMNEAR":                               0xb6
+  RAMNEAR-1                   0xf'3f00   0x36  <Init block>
+    .data            inited   0xf'3f00    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f02    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f04    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f06    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f08    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f0a    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f0c    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f0e    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f10    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f12    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f14    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f16    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f18    0x2  AR_SKETCH.o [1]
+    .data            inited   0xf'3f1a    0x2  AR_SKETCH.o [1]
+    .bss             inited   0xf'3f1c    0x4  AR_LIB_TIME.o [1]
+    .bss             inited   0xf'3f20    0x4  AR_LIB_TIME.o [1]
+    .bss             inited   0xf'3f24    0x4  AR_LIB_TIME.o [1]
+    .bss             inited   0xf'3f28    0x2  AR_SKETCH.o [1]
+    .bss             inited   0xf'3f2a    0x2  AR_SKETCH.o [1]
+    .bss             inited   0xf'3f2c    0x2  AR_SKETCH.o [1]
+    .bss             inited   0xf'3f2e    0x1  AR_LIB_TIME.o [1]
+    .bss             inited   0xf'3f2f    0x1  AR_LIB_TIME.o [1]
+    .bss             inited   0xf'3f30    0x1  AR_SKETCH.o [1]
+    .bss             inited   0xf'3f31    0x1  AR_SKETCH.o [1]
+    .bss             inited   0xf'3f32    0x1  AR_SKETCH.o [1]
+    .bss             inited   0xf'3f33    0x1  AR_SKETCH.o [1]
+    .bss             inited   0xf'3f34    0x1  AR_SKETCH.o [1]
+    .bss             inited   0xf'3f35    0x1  r_main.o [1]
+  CSTACK                      0xf'3f36   0x80  <Block>
+    CSTACK           rw data  0xf'3f36    0x0  cstartup.o [3]
+    CSTACK           uninit   0xf'3f36   0x80  <Block tail>
+                            - 0xf'3fb6   0xb6
+
+"SADDRMEM":                               0x0
+  .wrkseg            rw data  0xf'fe20    0x0  cstartup.o [3]
+
+Unused ranges:
+
+      From        To      Size
+      ----        --      ----
+      0xd8    0x2fff    0x2f28
+    0x36fd  0x7'fdff  0x7'c703
+  0xf'3fb6  0xf'fe1f    0xbe6a
+  0xf'fe20  0xf'fedf      0xc0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address   Size
+          -------   ----
+Copy (___iar_copy_init_near2)
+    1 source range, total size 0x36:
+            0x361e  0x36
+    1 destination range, total size 0x36:
+          0xf'3f00  0x36
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+command line/config:
+    ---------------------------------------------
+    Total:
+
+F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Obj: [1]
+    AR_LIB_PORT.o           323       76
+    AR_LIB_TIME.o           131       14       14
+    AR_SKETCH.o             579       61       39
+    LibReplacement.o         34
+    r_cg_cgc.o               79
+    r_cg_timer.o            122
+    r_main.o                 58        5        1
+    r_systeminit.o           27
+    ---------------------------------------------
+    Total:                1'353      156       54
+
+dbgrlnnf23nd.a: [2]
+    __dbg_abort.o            10
+    __dbg_break.o             3
+    __dbg_xxexit.o           17
+    ---------------------------------------------
+    Total:                   30
+
+dlrlnnf23n.a: [3]
+    cexit.o                   5
+    cstartup.o               58
+    data_init.o              65
+    default_handler.o        19
+    exit.o                    3
+    interrupt_vector.o               126
+    near_copy_init.o         92
+    ---------------------------------------------
+    Total:                  242      126
+
+    Linker created                    12      128
+-------------------------------------------------
+    Grand Total:          1'625      294      182
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                    Address   Size  Type      Object
+-----                    -------   ----  ----      ------
+.iar.init_table$$Base     0x3654          --   Gb  - Linker created -
+.iar.init_table$$Limit    0x3660          --   Gb  - Linker created -
+@cend                     0x35a8         Code  Gb  cstartup.o [3]
+@cstart                   0x356e         Code  Gb  cstartup.o [3]
+CSTACK$$Base            0xf'3f36          --   Gb  - Linker created -
+CSTACK$$Limit           0xf'3fb6          --   Gb  - Linker created -
+HWDIV_8_8_8               0x35a8         Code  Gb  LibReplacement.o [1]
+HWMOD_8_8_8               0x35b8         Code  Gb  LibReplacement.o [1]
+OPT_BYTE$$Base              0xc0          --   Gb  - Linker created -
+OPT_BYTE$$Limit             0xc4          --   Gb  - Linker created -
+Region$$Table$$Base       0x3654          --   Gb  - Linker created -
+Region$$Table$$Limit      0x3660          --   Gb  - Linker created -
+_NEAR_CONST_LOCATION {Abs}
+                             0x0         Data  Gb  <internal module>
+_P_dif                  0xf'3000   0x4c  Data  Lc  AR_LIB_PORT.o [1]
+_R_CGC_Create             0x34e5   0x4f  Code  Gb  r_cg_cgc.o [1]
+_R_MAIN_UserInit          0x353c   0x32  Code  Gb  r_main.o [1]
+_R_Systeminit             0x35ca   0x13  Code  Gb  r_systeminit.o [1]
+_R_TAU1_Create            0x346b   0x7a  Code  Gb  r_cg_timer.o [1]
+_SEG_TABLE              0xf'304c   0x16  Data  Gb  AR_SKETCH.o [1]
+___DebugBreak             0x361b    0x3  Code  Gb  __dbg_break.o [2]
+___exit                   0x35f8   0x11  Code  Gb  __dbg_xxexit.o [2]
+___iar_copy_init_near2    0x3660   0x5c  Code  Gb  near_copy_init.o [3]
+___iar_data_init2         0x36bc   0x41  Code  Gb  data_init.o [3]
+___iar_default_interrupt_handler
+                          0x35e5   0x13  Code  Lc  default_handler.o [3]
+___interrupt_0x00         0x356e         Code  Gb  cstartup.o [3]
+___interrupt_0x04         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x06         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x08         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x0A         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x0C         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x0E         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x10         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x12         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x14         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x16         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x18         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x1A         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x1C         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x1E         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x20         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x22         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x24         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x26         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x28         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x2A         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x2C         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x2E         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x30         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x32         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x34         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x36         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x38         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x3A         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x3C         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x3E         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x40         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x42         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x44         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x46         0x33ef         Code  Gb  AR_LIB_TIME.o [1]
+___interrupt_0x48         0x33f7         Code  Gb  AR_LIB_TIME.o [1]
+___interrupt_0x4A         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x4C         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x4E         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x50         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x52         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x54         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x56         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x58         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x5A         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x5C         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x5E         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x60         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x62         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x64         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x66         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x68         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x6A         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x6C         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x6E         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x70         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x72         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x74         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x76         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x78         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x7A         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x7C         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_0x7E         0x35e5   0x13  Code  Wk  default_handler.o [3]
+___interrupt_tab_0x00        0x0         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x04        0x4         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x06        0x6         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x08        0x8         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x0A        0xa         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x0C        0xc         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x0E        0xe         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x10       0x10         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x12       0x12         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x14       0x14         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x16       0x16         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x18       0x18         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x1A       0x1a         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x1C       0x1c         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x1E       0x1e         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x20       0x20         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x22       0x22         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x24       0x24         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x26       0x26         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x28       0x28         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x2A       0x2a         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x2C       0x2c         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x2E       0x2e         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x30       0x30         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x32       0x32         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x34       0x34         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x36       0x36         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x38       0x38         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x3A       0x3a         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x3C       0x3c         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x3E       0x3e         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x40       0x40         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x42       0x42         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x44       0x44         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x46       0x46         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x48       0x48         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x4A       0x4a         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x4C       0x4c         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x4E       0x4e         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x50       0x50         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x52       0x52         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x54       0x54         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x56       0x56         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x58       0x58         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x5A       0x5a         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x5C       0x5c         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x5E       0x5e         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x60       0x60         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x62       0x62         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x64       0x64         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x66       0x66         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x68       0x68         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x6A       0x6a         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x6C       0x6c         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x6E       0x6e         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x70       0x70         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x72       0x72         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x74       0x74         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x76       0x76         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x78       0x78         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x7A       0x7a         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x7C       0x7c         Data  Gb  interrupt_vector.o [3]
+___interrupt_tab_0x7E       0x7e         Data  Gb  interrupt_vector.o [3]
+___low_level_init         0x35dd    0x8  Code  Gb  r_systeminit.o [1]
+__exit                    0x3613         Code  Gb  cexit.o [3]
+__iar_exit_end            0x3618         Code  Gb  cexit.o [3]
+__iar_program_start       0x356e         Code  Gb  cstartup.o [3]
+__link_file_version_2 {Abs}
+                             0x1         Data  Gb  <internal module>
+__program_end             0x35a8         Code  Gb  cstartup.o [3]
+_abort                    0x3609    0xa  Code  Gb  __dbg_abort.o [2]
+_comPin0                0xf'3f0e    0x2  Data  Gb  AR_SKETCH.o [1]
+_comPin1                0xf'3f10    0x2  Data  Gb  AR_SKETCH.o [1]
+_comPin2                0xf'3f12    0x2  Data  Gb  AR_SKETCH.o [1]
+_comPin3                0xf'3f14    0x2  Data  Gb  AR_SKETCH.o [1]
+_digitalRead              0x33bf   0x29  Code  Gb  AR_LIB_PORT.o [1]
+_digitalWrite             0x3347   0x78  Code  Gb  AR_LIB_PORT.o [1]
+_ex_swPin               0xf'3f16    0x2  Data  Gb  AR_SKETCH.o [1]
+_exit                     0x3618    0x3  Code  Gb  exit.o [3]
+_g_micros               0xf'3f24    0x4  Data  Gb  AR_LIB_TIME.o [1]
+_g_millis               0xf'3f1c    0x4  Data  Gb  AR_LIB_TIME.o [1]
+_g_millis_b             0xf'3f20    0x4  Data  Gb  AR_LIB_TIME.o [1]
+_ie_flag                0xf'3f35    0x1  Data  Gb  r_main.o [1]
+_interrupt_vector_table
+                             0x0         Data  Gb  interrupt_vector.o [3]
+_loop                     0x30d5  0x140  Code  Gb  AR_SKETCH.o [1]
+_main                     0x3534    0x8  Code  Gb  r_main.o [1]
+_micro_f                0xf'3f2f    0x1  Data  Gb  AR_LIB_TIME.o [1]
+_milli_f                0xf'3f2e    0x1  Data  Gb  AR_LIB_TIME.o [1]
+_millis                   0x33e8    0x7  Code  Gb  AR_LIB_TIME.o [1]
+_mini_data              0xf'3f30    0x1  Data  Gb  AR_SKETCH.o [1]
+_old_time               0xf'3f2a    0x2  Data  Gb  AR_SKETCH.o [1]
+_opbyte0                    0xc0    0x1  Data  Gb  r_main.o [1]
+_opbyte1                    0xc1    0x1  Data  Gb  r_main.o [1]
+_opbyte2                    0xc2    0x1  Data  Gb  r_main.o [1]
+_opbyte3                    0xc3    0x1  Data  Gb  r_main.o [1]
+_pinMode                  0x32a5   0xa2  Code  Gb  AR_LIB_PORT.o [1]
+_precount1              0xf'3f32    0x1  Data  Gb  AR_SKETCH.o [1]
+_precount2              0xf'3f33    0x1  Data  Gb  AR_SKETCH.o [1]
+_prescale4sw            0xf'3f34    0x1  Data  Gb  AR_SKETCH.o [1]
+_r_tau1_channel2_interrupt
+                          0x33ef    0x8  Code  Gb  AR_LIB_TIME.o [1]
+_r_tau1_channel3_interrupt
+                          0x33f7   0x74  Code  Gb  AR_LIB_TIME.o [1]
+_sec_data               0xf'3f31    0x1  Data  Gb  AR_SKETCH.o [1]
+_segPinA                0xf'3f28    0x2  Data  Gb  AR_SKETCH.o [1]
+_segPinB                0xf'3f00    0x2  Data  Gb  AR_SKETCH.o [1]
+_segPinC                0xf'3f02    0x2  Data  Gb  AR_SKETCH.o [1]
+_segPinD                0xf'3f04    0x2  Data  Gb  AR_SKETCH.o [1]
+_segPinDP               0xf'3f0c    0x2  Data  Gb  AR_SKETCH.o [1]
+_segPinE                0xf'3f06    0x2  Data  Gb  AR_SKETCH.o [1]
+_segPinF                0xf'3f08    0x2  Data  Gb  AR_SKETCH.o [1]
+_segPinG                0xf'3f0a    0x2  Data  Gb  AR_SKETCH.o [1]
+_set_SEG                  0x3215   0x90  Code  Gb  AR_SKETCH.o [1]
+_setup                    0x3062   0x73  Code  Gb  AR_SKETCH.o [1]
+_swPin                  0xf'3f18    0x2  Data  Gb  AR_SKETCH.o [1]
+_sw_data                0xf'3f1a    0x2  Data  Gb  AR_SKETCH.o [1]
+_time_mode              0xf'3f2c    0x2  Data  Gb  AR_SKETCH.o [1]
+
+
+[1] = F:\G14FPB\G14FPB_AN\work\AN5387\workspace\IAR\Debug\Obj
+[2] = dbgrlnnf23nd.a
+[3] = dlrlnnf23n.a
+
+  1'625 bytes of readonly  code memory
+    294 bytes of readonly  data memory
+    182 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

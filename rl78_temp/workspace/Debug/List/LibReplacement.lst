@@ -1,0 +1,227 @@
+###############################################################################
+#                                                                             #
+# IAR Assembler V1.10.1.50009 for RL78                  06/Jun/2012  14:26:23 #
+# Copyright 2011 IAR Systems AB.                                              #
+#                                                                             #
+#    Core         =  rl78_1                                                   #
+#    Source file  =  C:\WorkSpace\RL78_temperature_release\R01AN0988EU0100_RL #
+#                    78\Debug\Obj\LibReplacement.s87                          #
+#    Command line =  C:\WorkSpace\RL78_temperature_release\R01AN0988EU0100_RL #
+#                    78\Debug\Obj\LibReplacement.s87 --core rl78_1            #
+#                    -D__DEVICE_FILE__=<ior5f100le.h>                         #
+#                    -D__DEVICE_FILE_EXT__=<ior5f100le_ext.h> -o              #
+#                    C:\WorkSpace\RL78_temperature_release\R01AN0988EU0100_RL #
+#                    78\Debug\Obj\ -M<> -r -ld C:\WorkSpace\RL78_temperature_ #
+#                    release\R01AN0988EU0100_RL78\Debug\List\                 #
+#                    -IC:\WorkSpace\RL78_temperature_release\R01AN0988EU0100_ #
+#                    RL78\applilet3_src\ -IC:\WorkSpace\RL78_temperature_rele #
+#                    ase\R01AN0988EU0100_RL78\user_src\                       #
+#                    -IC:\WorkSpace\RL78_temperature_release\R01AN0988EU0100_ #
+#                    RL78\fdl\pre-compiled\iar\lib\                           #
+#                    -IC:\WorkSpace\RL78_temperature_release\R01AN0988EU0100_ #
+#                    RL78\fdl\pre-compiled\iar\smp\C\ -D__NEAR_MODEL__        #
+#                    -D__NEAR_DATA_MODEL__ --code_model near --data_model     #
+#                    near                                                     #
+#    List file    =  C:\WorkSpace\RL78_temperature_release\R01AN0988EU0100_RL #
+#                    78\Debug\List\LibReplacement.lst                         #
+#    Object file  =  C:\WorkSpace\RL78_temperature_release\R01AN0988EU0100_RL #
+#                    78\Debug\Obj\LibReplacement.r87                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+##############################################################################
+# Module __HWMUL_16_16_16                                                    #
+##############################################################################
+
+ 
+ 23 bytes in segment RCODE , module __HWMUL_16_16_16
+ 
+ 23 bytes of CODE memory  in module __HWMUL_16_16_16
+
+##############################################################################
+# Module __HWMUL_32_32_32                                                    #
+##############################################################################
+
+    104                        ;------------------------------------------------------------------------------
+    105                        
+    106                        ;------------------------------------------------------------------------------
+    107                        ;       Multiplies two signed/unsigned longs
+    108                        ;
+    109                        ;       Input:  AX,BC      Operand 1
+    110                        ;               Stack      Operand 2
+    111                        ;       Output: AX,BC      result (Op1 mul Op2)
+    112                        ;               Z-flag
+    113                        ;
+    114                        ; This function can be used as replacement for the library function ?L_MUL_L03
+    115                        ; by using the linker option -eHWMUL_32_32_32=?L_MUL_L03
+    116                        ;------------------------------------------------------------------------------
+ 
+ 116 bytes in segment RCODE , module __HWMUL_32_32_32
+ 
+ 116 bytes of CODE memory  in module __HWMUL_32_32_32
+
+##############################################################################
+# Module __HWDIV_8_8_8                                                       #
+##############################################################################
+
+    211                        ;------------------------------------------------------------------------------
+    212                        
+    213                        ;------------------------------------------------------------------------------
+    214                        ;       Division of two unsigned chars
+    215                        ;
+    216                        ;       Input:  A         Operand 1
+    217                        ;               X         Operand 2
+    218                        ;
+    219                        ;       Call:   CALL       HWDIV_8_8_8
+    220                        ;
+    221                        ;       Output: A         Operand1 div Operand2
+    222                        ;               Z-flag
+    223                        ; This function can be used as replacement for the library function ?UC_DIV_L01
+    224                        ; by using the linker option -eHWDIV_8_8_8=?UC_DIV_L01
+    225                        ;------------------------------------------------------------------------------
+ 
+ 60 bytes in segment RCODE , module __HWDIV_8_8_8
+ 
+ 60 bytes of CODE memory  in module __HWDIV_8_8_8
+
+##############################################################################
+# Module __HWDIV_16_16_16                                                    #
+##############################################################################
+
+    287                        ;------------------------------------------------------------------------------
+    288                        
+    289                        ;------------------------------------------------------------------------------
+    290                        ;       Division of two unsigned ints
+    291                        ;
+    292                        ;       Input:  AX         Operand 1
+    293                        ;               BC         Operand 2
+    294                        ;
+    295                        ;       Call:   CALL       HWDIV_16_16_16
+    296                        ;
+    297                        ;       Output: AX         Operand1 div Operand2
+    298                        ;               Z-flag
+    299                        ; This function can be used as replacement for the library function ?UI_DIV_L02
+    300                        ; by using the linker option -eHWDIV_16_16_16=?UI_DIV_L02
+    301                        ;------------------------------------------------------------------------------
+ 
+ 58 bytes in segment RCODE , module __HWDIV_16_16_16
+ 
+ 58 bytes of CODE memory  in module __HWDIV_16_16_16
+
+##############################################################################
+# Module __HWDIV_32_32_32                                                    #
+##############################################################################
+
+    356                        ;------------------------------------------------------------------------------
+    357                        
+    358                        ;------------------------------------------------------------------------------
+    359                        ;       Division of two unsigned longs
+    360                        ;
+    361                        ;       Input:  AX, BC     Operand 1
+    362                        ;               Stack      Operand 2
+    363                        ;
+    364                        ;       Call:   CALL       HWDIV_32_32_32
+    365                        ;
+    366                        ;       Output: AX, BC     Operand1 div Operand2
+    367                        ;               Z-flag
+    368                        ; This function can be used as replacement for the library function ?UL_DIV_L03
+    369                        ; by using the linker option -eHWDIV_32_32_32=?UL_DIV_L03
+    370                        ;------------------------------------------------------------------------------
+ 
+ 130 bytes in segment RCODE , module __HWDIV_32_32_32
+ 
+ 130 bytes of CODE memory  in module __HWDIV_32_32_32
+
+##############################################################################
+# Module __HWSDIV                                                            #
+##############################################################################
+
+    466                        ;------------------------------------------------------------------------------
+    467                        
+    468                        ;------------------------------------------------------------------------------
+    469                        ;       Data Definition for signed division functions
+    470                        ;------------------------------------------------------------------------------
+ 
+ 1 byte in segment SADDR_Z , module __HWSDIV
+ 
+ 1 byte of DATA memory  in module __HWSDIV
+
+##############################################################################
+# Module __HWSDIV_8_8_8                                                      #
+##############################################################################
+
+    478                        ;------------------------------------------------------------------------------
+    479                        
+    480                        ;------------------------------------------------------------------------------
+    481                        ;       Division of two signed chars
+    482                        ;
+    483                        ;       Input:  A         Operand 1
+    484                        ;               X         Operand 2
+    485                        ;
+    486                        ;       Call:   CALL       HWSDIV_8_8_8
+    487                        ;
+    488                        ;       Output: A          Operand1 div Operand2
+    489                        ;               Z-flag
+    490                        ; This function can be used as replacement for the library function ?SC_DIV_L01
+    491                        ; by using the linker option -eHWSDIV_8_8_8=?SC_DIV_L01
+    492                        ;------------------------------------------------------------------------------
+ 
+ 96 bytes in segment RCODE , module __HWSDIV_8_8_8
+ 
+ 96 bytes of CODE memory  in module __HWSDIV_8_8_8
+
+##############################################################################
+# Module __HWSDIV_16_16_16                                                   #
+##############################################################################
+
+    582                        ;------------------------------------------------------------------------------
+    583                        
+    584                        ;------------------------------------------------------------------------------
+    585                        ;       Division of two signed ints
+    586                        ;
+    587                        ;       Input:  AX         Operand 1
+    588                        ;               BC         Operand 2
+    589                        ;
+    590                        ;       Call:   CALL       HWSDIV_16_16_16
+    591                        ;
+    592                        ;       Output: AX         Operand1 div Operand2
+    593                        ;               Z-flag
+    594                        ; This function can be used as replacement for the library function ?SI_DIV_L02
+    595                        ; by using the linker option -eHWSDIV_16_16_16=?SI_DIV_L02
+    596                        ;------------------------------------------------------------------------------
+ 
+ 106 bytes in segment RCODE , module __HWSDIV_16_16_16
+ 
+ 106 bytes of CODE memory  in module __HWSDIV_16_16_16
+
+##############################################################################
+# Module __HWSDIV_32_32_32                                                   #
+##############################################################################
+
+    684                        ;------------------------------------------------------------------------------
+    685                                
+    686                        ;------------------------------------------------------------------------------
+    687                        ;       Division of two signed longs
+    688                        ;
+    689                        ;       Input:  AX, BC     Operand 1
+    690                        ;               Stack      Operand 2
+    691                        ;
+    692                        ;       Call:   CALL       HWSDIV_32_32_32
+    693                        ;
+    694                        ;       Output: AX, BC     Operand1 div Operand2
+    695                        ;               Z-flag
+    696                        ; This function can be used as replacement for the library function ?SL_DIV_L03
+    697                        ; by using the linker option -eHWSDIV_32_32_32=?SL_DIV_L03
+    698                        ;------------------------------------------------------------------------------
+    855                        
+    856                        ;------------------------------------------------------------------------------
+    857                        
+    858                                END
+ 
+ 199 bytes in segment RCODE , module __HWSDIV_32_32_32
+ 
+ 199 bytes of CODE memory  in module __HWSDIV_32_32_32
+
+Errors: none
+Warnings: none

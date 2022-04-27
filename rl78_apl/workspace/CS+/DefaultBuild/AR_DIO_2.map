@@ -1,0 +1,419 @@
+Renesas Optimizing Linker (W3.02.00 )             05-Jun-2020 13:46:41
+
+*** Options ***
+
+-subcommand=LinkerAR_DIO_2.tmp
+-device="C:\Renesas\e2_studio\DebugComp\\RL78\RL78\Common\DR5F104ML.DVF"
+-list="AR_DIO_2.map"
+-show=symbol,vector,struct
+-nooptimize
+-auto_section_layout
+-security_id=00000000000000000000
+-debug_monitor=7FF00-7FFFF
+-user_opt_byte=EE7FE8
+-ocdbg=84
+-ocdtr
+-input=".\cstart.obj"
+-input=".\stkinit.obj"
+-input=".\r_main.obj"
+-input=".\r_systeminit.obj"
+-input=".\r_cg_cgc.obj"
+-input=".\r_cg_timer.obj"
+-input=".\sketch\AR_SKETCH.obj"
+-input=".\AR_LIB\AR_LIB_PORT.obj"
+-input=".\AR_LIB\AR_LIB_TIME.obj"
+-library="C:\Program Files (x86)\Renesas\RL78\1_9_0\lib\rl78em4s99.lib"
+-library="C:\Program Files (x86)\Renesas\RL78\1_9_0\lib\rl78em4r.lib"
+-library="C:\Program Files (x86)\Renesas\RL78\1_9_0\lib\malloc_n.lib"
+-output="AR_DIO_2.abs"
+-debug
+-nocompress
+-memory=high
+-rom=.data=.dataR,.sdata=.sdataR
+-nomessage
+-nologo
+
+*** Error information ***
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+.vect
+                                  00000000  0000007f        80   0
+.constf
+                                  00000080  00000080         0   2
+.sdata
+                                  00000080  00000080         0   2
+.data
+                                  00000082  000000b3        32   2
+.option_byte
+                                  000000c0  000000c3         4   1
+.security_id
+                                  000000c4  000000cd         a   1
+.RLIB
+                                  000000c4  000000c4         0   1
+.SLIB
+                                  000000c4  000000c4         0   1
+.monitor1
+                                  000000ce  000000d7         a   1
+.text
+                                  000000d8  000001a6        cf   1
+.textf
+                                  000001a7  000006eb       545   1
+.const
+                                  00003000  00003061        62   2
+.monitor2
+                                  0007ff00  0007ffff       100   1
+.bss
+                                  000f4700  000f4709         a   2
+.dataR
+                                  000f470a  000f473b        32   2
+.sbss
+                                  000ffe20  000ffe20         0   2
+.sdataR
+                                  000ffe20  000ffe20         0   2
+
+*** Symbol List ***
+
+SECTION=
+FILE=                               START        END    SIZE
+  SYMBOL                            ADDR        SIZE    INFO      COUNTS  OPT
+    STRUCT                                      SIZE
+      MEMBER                        ADDR        SIZE    INFO
+
+SECTION=.vect
+FILE=rlink_generates_04
+                                  00000000  0000007f        80
+
+SECTION=.data
+FILE=.\sketch\AR_SKETCH.obj
+                                  00000082  000000a9        28
+FILE=.\AR_LIB\AR_LIB_TIME.obj
+                                  000000aa  000000b3         a
+
+SECTION=.option_byte
+FILE=rlink_generates_01
+                                  000000c0  000000c3         4
+
+SECTION=.security_id
+FILE=rlink_generates_03
+                                  000000c4  000000cd         a
+
+SECTION=.monitor1
+FILE=rlink_generates_02
+                                  000000ce  000000d7         a
+
+SECTION=.text
+FILE=.\cstart.obj
+                                  000000d8  00000131        5a
+  _start
+                                  000000d8         0   none ,g         0
+  _exit
+                                  00000130         0   none ,g         1
+FILE=.\AR_LIB\AR_LIB_TIME.obj
+                                  00000132  000001a6        75
+  _r_tau1_channel2_interrupt@1
+                                  00000132         b   func ,l         0
+  _r_tau1_channel3_interrupt@1
+                                  0000013d        6a   func ,l         0
+
+SECTION=.textf
+FILE=.\stkinit.obj
+                                  000001a7  000001ea        44
+  _stkinit
+                                  000001a7         0   none ,g         1
+  LSTINIT1
+                                  000001b5         0   none ,l         1
+  LSTINIT2
+                                  000001df         0   none ,l         2
+  LSTINIT3
+                                  000001ea         0   none ,l         2
+FILE=.\r_main.obj
+                                  000001eb  00000220        36
+  _main
+                                  000001eb         9   func ,g         1
+  _R_MAIN_UserInit
+                                  000001f4        2d   func ,g         1
+FILE=.\r_systeminit.obj
+                                  00000221  00000237        17
+  _R_Systeminit
+                                  00000221        12   func ,g         1
+  _hdwinit
+                                  00000233         5   func ,g         1
+FILE=.\r_cg_cgc.obj
+                                  00000238  00000278        41
+  _R_CGC_Create
+                                  00000238        41   func ,g         1
+FILE=.\r_cg_timer.obj
+                                  00000279  00000318        a0
+  _R_TAU1_Create
+                                  00000279        a0   func ,g         1
+FILE=.\sketch\AR_SKETCH.obj
+                                  00000319  0000051a       202
+  _setup
+                                  00000319        72   func ,g         1
+  _loop
+                                  0000038b       122   func ,g         1
+  _set_SEG
+                                  000004ad        6e   func ,g         4
+FILE=.\AR_LIB\AR_LIB_PORT.obj
+                                  0000051b  000005cf        b5
+  _pinMode
+                                  0000051b        62   func ,g         e
+  _digitalWrite
+                                  0000057d        3e   func ,g         d
+  _digitalRead
+                                  000005bb        15   func ,g         2
+FILE=.\AR_LIB\AR_LIB_TIME.obj
+                                  000005d0  000006eb       11c
+  _micros
+                                  000005d0        4c   func ,g         0
+  _millis
+                                  0000061c         7   func ,g         1
+  _delay
+                                  00000623        1e   func ,g         0
+  _delayMicroseconds
+                                  00000641        96   func ,g         0
+  _wait_timeup
+                                  000006d7        15   func ,g         2
+
+SECTION=.const
+FILE=.\sketch\AR_SKETCH.obj
+                                  00003000  00003015        16
+  _SEG_TABLE
+                                  00003000        16   data ,g         3
+FILE=.\AR_LIB\AR_LIB_PORT.obj
+                                  00003016  00003061        4c
+  _P_dif@1
+                                  00003016        4c   data ,l         4
+
+SECTION=.monitor2
+FILE=rlink_generates_02
+                                  0007ff00  0007ffff       100
+
+SECTION=.bss
+FILE=.\r_main.obj
+                                  000f4700  000f4700         1
+  _ie_flag
+                                  000f4700         1   data ,g         1
+FILE=.\AR_LIB\AR_LIB_TIME.obj
+                                  000f4702  000f4709         8
+  _g_micros
+                                  000f4702         4   data ,g         6
+  _g_micros_b
+                                  000f4706         4   data ,g         0
+
+SECTION=.dataR
+FILE=.\sketch\AR_SKETCH.obj
+                                  000f470a  000f4731        28
+  _segPinA
+                                  000f470a         2   data ,g         2
+  _segPinB
+                                  000f470c         2   data ,g         2
+  _segPinC
+                                  000f470e         2   data ,g         2
+  _segPinD
+                                  000f4710         2   data ,g         2
+  _segPinE
+                                  000f4712         2   data ,g         2
+  _segPinF
+                                  000f4714         2   data ,g         2
+  _segPinG
+                                  000f4716         2   data ,g         2
+  _segPinDP
+                                  000f4718         2   data ,g         2
+  _comPin0
+                                  000f471a         2   data ,g         3
+  _comPin1
+                                  000f471c         2   data ,g         3
+  _comPin2
+                                  000f471e         2   data ,g         3
+  _comPin3
+                                  000f4720         2   data ,g         3
+  _ex_swPin
+                                  000f4722         2   data ,g         2
+  _swPin
+                                  000f4724         2   data ,g         2
+  _old_time
+                                  000f4726         2   data ,g         2
+  _mini_data
+                                  000f4728         1   data ,g         4
+  _sec_data
+                                  000f4729         1   data ,g         5
+  _precount1
+                                  000f472a         1   data ,g         3
+  _precount2
+                                  000f472b         1   data ,g         4
+  _digi_sel
+                                  000f472c         1   data ,g         0
+  _prescale4sw
+                                  000f472d         1   data ,g         3
+  _sw_data
+                                  000f472e         2   data ,g         4
+  _time_mode
+                                  000f4730         2   data ,g         3
+FILE=.\AR_LIB\AR_LIB_TIME.obj
+                                  000f4732  000f473b         a
+  _g_millis
+                                  000f4732         4   data ,g         6
+  _g_millis_b
+                                  000f4736         4   data ,g         a
+  _milli_f
+                                  000f473a         1   data ,g         5
+  _micro_f
+                                  000f473b         1   data ,g         6
+
+Absolute value symbols
+FILE=rlink_generates_05
+  __s.text
+                                  000000d8         0   none ,g         0
+  __e.text
+                                  000001a7         0   none ,g         0
+  __s.textf
+                                  000001a7         0   none ,g         0
+  __e.textf
+                                  000006ec         0   none ,g         0
+  __s.const
+                                  00003000         0   none ,g         0
+  __e.const
+                                  00003062         0   none ,g         0
+  __s.constf
+                                  00000080         0   none ,g         0
+  __e.constf
+                                  00000080         0   none ,g         0
+  __s.data
+                                  00000082         0   none ,g         0
+  __e.data
+                                  000000b4         0   none ,g         0
+  __s.sdata
+                                  00000080         0   none ,g         0
+  __e.sdata
+                                  00000080         0   none ,g         0
+  __s.bss
+                                  000f4700         0   none ,g         0
+  __e.bss
+                                  000f470a         0   none ,g         0
+  __s.sbss
+                                  000ffe20         0   none ,g         0
+  __e.sbss
+                                  000ffe20         0   none ,g         0
+  __s.dataR
+                                  000f470a         0   none ,g         0
+  __e.dataR
+                                  000f473c         0   none ,g         0
+  __s.sdataR
+                                  000ffe20         0   none ,g         0
+  __e.sdataR
+                                  000ffe20         0   none ,g         0
+  __s.RLIB
+                                  000000c4         0   none ,g         0
+  __e.RLIB
+                                  000000c4         0   none ,g         0
+  __s.SLIB
+                                  000000c4         0   none ,g         0
+  __e.SLIB
+                                  000000c4         0   none ,g         0
+  __s.option_byte
+                                  000000c0         0   none ,g         0
+  __e.option_byte
+                                  000000c4         0   none ,g         0
+  __s.monitor1
+                                  000000ce         0   none ,g         0
+  __e.monitor1
+                                  000000d8         0   none ,g         0
+  __s.monitor2
+                                  0007ff00         0   none ,g         0
+  __e.monitor2
+                                  00080000         0   none ,g         0
+  __s.security_id
+                                  000000c4         0   none ,g         0
+  __e.security_id
+                                  000000ce         0   none ,g         0
+  __s.vect
+                                  00000000         0   none ,g         0
+  __e.vect
+                                  00000080         0   none ,g         0
+  __RAM_ADDR_START
+                                  000f3f00         0   none ,g         0
+  __RAM_ADDR_END
+                                  000ffee0         0   none ,g         0
+  __STACK_ADDR_START
+                                  000ffe20         0   none ,g         1
+  __STACK_ADDR_END
+                                  000f473c         0   none ,g         1
+
+*** Unfilled Areas ***
+
+AREA                                START    END
+
+*** Delete Symbols ***
+
+SYMBOL                                SIZE    INFO
+
+*** Variable Vector Table List ***
+
+ADDRESS  SYMBOL/ADDRESS
+00       _start
+02       ffff
+04       
+06       
+08       
+0a       
+0c       
+0e       
+10       
+12       
+14       
+16       
+18       
+1a       
+1c       
+1e       
+20       
+22       
+24       
+26       
+28       
+2a       
+2c       
+2e       
+30       
+32       
+34       
+36       
+38       
+3a       
+3c       
+3e       
+40       
+42       
+44       
+46       _r_tau1_channel2_interrupt@1
+48       _r_tau1_channel3_interrupt@1
+4a       
+4c       
+4e       
+50       
+52       
+54       
+56       
+58       
+5a       
+5c       
+5e       
+60       
+62       
+64       
+66       
+68       
+6a       
+6c       
+6e       
+70       
+72       
+74       
+76       
+78       
+7a       
+7c       
+7e       

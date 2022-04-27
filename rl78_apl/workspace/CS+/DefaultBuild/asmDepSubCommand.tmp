@@ -1,0 +1,5 @@
+-asmopt=-MM
+-asmopt=-MP
+-cpu=S3
+-c
+-dev="C:\Renesas\e2_studio\DebugComp\\RL78\RL78\Common\DR5F104ML.DVF"

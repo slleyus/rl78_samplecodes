@@ -1,0 +1,8 @@
+-cpu=S3
+-c
+-dev="C:\Renesas\e2_studio\DebugComp\\RL78\RL78\Common\DR5F104ML.DVF"
+-I "C:\Program Files (x86)\Renesas\RL78\1_9_0\inc"
+-I "F:\G14FPB\G14FPB_AN\work\AN5387\workspace\CS+\AR_LIB"
+-I "F:\G14FPB\G14FPB_AN\work\AN5387\workspace\CS+" 
+-lang=c99
+-g

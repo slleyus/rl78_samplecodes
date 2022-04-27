@@ -1,0 +1,53 @@
+---- fdl_info.txt  ----
+
+Library:      FDL E1.10 (T01)
+Date:         31.01.2011 15:22:20
+
+Environment:  IAR environment for RL78 (version V1.xx)
+
+
+Implementation of flash data library for Renesas RL78 single-chip microcontroller
+----------------------------------------------------------------------------------
+Microcontroller Family:     RL78
+Flash technology:           MF3 single voltage SST flash (1KB flash block size)
+
+History:
+========
+E1.10  engineering release
+
+
+Files:
+======
+
+<<Folder: / >>
+  fdl_info.txt              <- this information file
+
+<<Folder: lib >>
+  fdl.h                     <- FDL header file, FDL interface definition            DO NOT CHANGE PLEASE
+  fdl_types.h               <- FDL header file, FDL types definition                DO NOT CHANGE PLEASE
+  fdl.r87                   <- pre-compiled library file                            DO NOT CHANGE PLEASE
+
+
+<<Folder: smp/C >>
+  fdl_descriptor.c          <- Descriptor calculation part                          DO NOT CHANGE PLEASE
+  fdl_descriptor.h          <- Pool configuration part                              ADAPT DUE TO REQUIREMENTS
+  fdl_sample_linker_file.dr <- linker sample file                                   ADAPT DUE TO REQUIREMENTS
+
+
+How to integrate:
+=================
+
+1) copy all the files into your project subdirectory
+
+2) add all fdl*.* files into your project (workbench or make-file)
+
+3) adapt project specific files as follows:
+
+   a) fdl_descriptor.h:
+      - adapt the pool configuration (please refer to the users manual for detailed description)
+
+4) adapt the *.xcl file due to your requirements
+   --> at least segments FAL_CODE and FAL_CNST should be defined
+
+5) re-compile the project
+

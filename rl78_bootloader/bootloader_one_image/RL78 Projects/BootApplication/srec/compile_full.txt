@@ -1,0 +1,53 @@
+# srec_cat command file generate a full image (boot and application) with CRC
+# Usage: srec_cat @filename
+
+#----------------------------------------------------------------------
+# Get first 0x1000 from application
+#----------------------------------------------------------------------
+..\HardwareDebug\BootApplication.mot    				# input file
+-fill 0xFF 0x0 0x1000									# fill unused data with 0xFF
+-crop 0x0 0x1000									    # crop down to our required space									
+
+#----------------------------------------------------------------------
+# Get first 0x1000 from boot
+#----------------------------------------------------------------------
+..\..\BootLoader\HardwareDebug\BootLoader.mot    		# input file
+-fill 0xFF 0x0 0x1000									# fill unused data with 0xFF
+-crop 0x0 0x1000									    # crop down to our required space
+-offset 0x1000											# offset this by 0x1000
+
+#----------------------------------------------------------------------
+# Get rest of the application
+#----------------------------------------------------------------------
+..\HardwareDebug\BootApplication.mot    				# input file
+-fill 0xFF 0x2000 0x7FE00                               # fill unused data with 0xFF
+-crop 0x2000 0x7FDFE                                    # crop down to our required space 
+
+#----------------------------------------------------------------------
+# Get CRC Value from pre-generated file
+#----------------------------------------------------------------------
+..\HardwareDebug\crc.mot                                # Invoke crc.mot file we generated before
+-crop 0x7FDFE 0x7FE00                                   # isolate the CRC data
+
+#----------------------------------------------------------------------
+# Produce the output file
+#----------------------------------------------------------------------
+-Output                                                 # invoke output generation
+..\HardwareDebug\JoinedBootAndApp.mot                   # file to output to
+#-hex-dump                                              # allows hex output for readability, remove pound to view
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
